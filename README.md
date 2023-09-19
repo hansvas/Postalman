@@ -11,7 +11,7 @@ Besides, free data, at least for Germany, is not really well available and I am 
 
 Using Postalman is very simple. The source code is relatively well documented and the test application shows the usage and possible options quite well.
 
-For Windows, you must either build [libpostal](https://github.com/openvenues/libpostal) yourself, following the instructions you find at libpostal, or use the prepared binaries (1.5 GB) from pypostalwin. You can also find the link there.
+For Windows, you must either build [libpostal](https://github.com/openvenues/libpostal) yourself, following the instructions you find at libpostal, or use the prepared binaries (1.5 GB) from  [pypostalwin](https://github.com/selva221724/pypostalwin). You can also find the link there.
 
 Postalman expects libpostal to be installed in the C:\Workbench directory, but you can change the installation of the DLL and the data at any time.
 
