@@ -11,9 +11,11 @@ Besides, free data, at least for Germany, is not really well available and I am 
 
 Using Postalman is very simple. The source code is relatively well documented and the test application shows the usage and possible options quite well.
 
-For Windows, you must either build [libpostal](https://github.com/openvenues/libpostal) yourself, following the instructions you find at libpostal, or use the prepared binaries (1.5 GB) from  [pypostalwin](https://github.com/selva221724/pypostalwin). You can also find the link there.
+For Windows (64 Bit only), you must either build [libpostal](https://github.com/openvenues/libpostal) yourself, following the instructions you find at libpostal, or use the prepared binaries (1.5 GB) from  [pypostalwin](https://github.com/selva221724/pypostalwin). You can also find the link there.
 
 Postalman expects libpostal to be installed in the C:\Workbench directory, but you can change the installation of the DLL and the data at any time.
+
+The included application is for windows 64 only. The class should work under linux also.
 
 ---
 
@@ -28,6 +30,8 @@ Außerdem sind freie Daten, zumindest für Deutschland, nicht wirklich gut verf�
 
 Die Verwendung von Postalman ist denkbar einfach. Der Quelltext ist relativ gut dokumentiert und die Testanwendung zeigt die Verwendung und die möglichen Optionen recht gut.
 
-Für Windows müssen Sie [libpostal](https://github.com/openvenues/libpostal) entweder selbst bauen, folgen Sie hierzu den Anweisungen die sie bei libpostal finden, oder sie benutzen die vorbereiteten Binaries (1,5 GB) von [pypostalwin](https://github.com/selva221724/pypostalwin). Den Link hierzu finden Sie ebenfalls dort.
+Für Windows (nur 64 Bit) müssen Sie [libpostal](https://github.com/openvenues/libpostal) entweder selbst bauen, folgen Sie hierzu den Anweisungen die sie bei libpostal finden, oder sie benutzen die vorbereiteten Binaries (1,5 GB) von [pypostalwin](https://github.com/selva221724/pypostalwin). Den Link hierzu finden Sie ebenfalls dort.
 
 Postalman erwartet die Installation von libpostal im Verzeichnis C:\Workbench, sie können die Installation der DLL und der Daten aber jederzeit ändern.
+
+Die beiliegende Testanwendung ist für Windows. Die Klasse Postalman sollte aber auch unter Linux funktionieren.
