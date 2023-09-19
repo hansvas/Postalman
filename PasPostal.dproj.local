@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.425,C:\Projekte\PasPostal\Postal.Rest.pas=C:\Projekte\PasPostal\Postal.Nomatim.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.366,C:\Projekte\PasPostal\Postal.PostalMan.pas=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.946,C:\Users\User\Documents\Embarcadero\Studio\Projekte\Package1.dproj=C:\Projekte\PasPostal\PasPostal.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.425,C:\Projekte\PasPostal\Postal.Rest.dfm=C:\Projekte\PasPostal\Postal.Nomatim.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.620,=rtl.dcp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.776,C:\Projekte\PasPostal\Postal.Rest.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.847,C:\Projekte\PasPostal\Postal.Nomatim.dfm=C:\Projekte\PasPostal\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.597,=bindcomp.dcp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.489,C:\Projekte\PasPostal\Postal.Nominatim.pas=C:\Projekte\PasPostal\Postal.Restservices.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.103,C:\Projekte\PasPostal\Postal.Types.pas=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.640,C:\Projekte\PasPostal\Postal.Strings.pas=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.628,=RESTComponents.dcp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.523,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.847,C:\Projekte\PasPostal\Postal.Nomatim.pas=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.758,C:\Projekte\PasPostal\Unit1.pas=C:\Projekte\PasPostal\Postal.Restservices.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.305,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.566,=bindengine.dcp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.780,C:\Projekte\PasPostal\Postal.Nomatim.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.897,C:\Projekte\PasPostal\Postal.Nomatim.pas=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.860,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.130,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.180,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.929,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.921,=C:\Projekte\PasPostal\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.044,C:\Projekte\PasPostal\Unit1.pas=C:\Projekte\PasPostal\Postal.Header.pas</Transaction>
+  </Transactions>
+</BorlandProject>
