@@ -257,6 +257,8 @@ resourcestring
   E_VALIDATOR_ALREADY_EXISTENT =
     'Postlman:Validator with name %s still exists and has a different class';
 
+  E_WRONG_DATADIR = 'libpostal:incorrect datadir';
+
 // --- Tools -------------------------------------------------------------------
 
 { Searches for the lowercase equivalent of v in a. If any, the result
@@ -324,7 +326,7 @@ begin
   FDoSetupParser := True;
   FDoSetupLanguageClassifier := True;
   FClearLists := True;
-  FValidators :=TList<TPostalManAbstractValidator>.Create;
+  FValidators := TList<TPostalManAbstractValidator>.Create;
 
   IsSetup := False;
   if doSetup then
@@ -350,11 +352,13 @@ begin
        result := input;
 end;
 
-
 procedure TPostalMan.Setup(const dataDir: AnsiString = '');
 begin
   if not IsSetup then
   begin
+    if (dataDir <> '') then
+      if not libpostal_setup_datadir(PAnsiChar(dataDir)) then
+         raise Exception.Create(E_WRONG_DATADIR);
     if not libpostal_setup() then
       raise Exception.Create(E_NO_SETUP);
     if DoSetupParser and (not libpostal_setup_parser()) then
@@ -461,11 +465,9 @@ begin
       if lbl = 'world_region' then Field := Map(world_region) else
       if lbl = 'country' then Field := Map(TPostalManFields.country)
                          else Field := Map(anything_else);
-      try
-        Addresses[result].Add(Field,value);
-      except
-        Duplicates.Add(Field,Value);
-      end;
+
+      if not Addresses[result].TryAdd(Field,Value) then
+         Duplicates.Add(Field,Value);
     end;
 
     case ValidateAddress(Addresses[result], score) of
@@ -615,11 +617,8 @@ begin
      value := UTF8Decode(parsed^.components[i]);
      if useOriginal then
         value := ValueFromOriginal(a,value);
-     try
-       FieldsAndValues.Add(Field,value);
-     except
-       Duplicates.Add(Field,Value);
-     end;
+     if not FieldsAndValues.TryAdd(Field,value) then
+        Duplicates.Add(Field,Value);
    end;
 
    result := False;
@@ -737,7 +736,6 @@ begin
       inc(invalids);
       dec(score);
     end;
-
     not_sure_if_valid               : begin
       // increase valids but not the score
       inc(valid_max);
