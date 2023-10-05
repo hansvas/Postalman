@@ -6,20 +6,20 @@ Nach einigem Suchen und einer Nacht des Ausprobierens fand ich folgende Lösung 
 
 Ich installierte msys2, öffnete einen msys2 mingw Prompt: 
 
-pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc
-git clone https://github.com/openvenues/libpostal
-cd libpostal
-cp -rf windows/* ./
-./bootstrap.sh
-./configure --datadir=/c
-make -j4
-make install
+pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc \
+git clone https://github.com/openvenues/libpostal \
+cd libpostal \
+cp -rf windows/* ./ \
+./bootstrap.sh \
+./configure --datadir=/c \
+make -j4 \
+make install \
 
 Danach findet sich libpostal-1.dll im Verzeichnis /msys64/home/user/libpostal/src/.libs
 Das Datenverzeichnis findet sich unter c:\libpostal, die notwendigen Daten wurden automatisch heruntergeladen.
 
-Wenn Sie das Verzeichnis ändern wollen müssen Sie die Zeile 
-./configure --datadir=/c
+Wenn Sie das Verzeichnis ändern wollen müssen Sie die Zeile \
+./configure --datadir=/c \
 
 anpassen. Das Laufwerk geben Sie als /c,/d usw. an. Die daran anschließenden Verzeichniss werden direkt angehängt. Beachten Sie das "libpostal" automatisch angehängt wird. Aus c/ wird dem entsprechend c:\libpostal, 
 aus c/data wird c:\data\libpostal. Der Pfad unter dem die Daten gespeichert werden muss auch im Testprogramm bzw. bei Initialisierung der DLL verwendet werden, dementsprechend auch in allen eigenen Programmen verwendet werden.
@@ -36,20 +36,20 @@ After some searching and a night of trial and error I found the following soluti
 
 I installed msys2, opened a msys2 mingw prompt: 
 
-pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc
-git clone https://github.com/openvenues/libpostal
-cd libpostal
-cp -rf windows/* ./
-./bootstrap.sh
-./configure --datadir=/c
-make -j4
-make install
+pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc \
+git clone https://github.com/openvenues/libpostal \
+cd libpostal \
+cp -rf windows/* ./ \
+./bootstrap.sh \
+./configure --datadir=/c \
+make -j4 \
+make install \
 
 After that you will find libpostal-1.dll in the directory /msys64/home/user/libpostal/src/.libs
 The data directory can be found at c:\libpostal, the necessary data was downloaded automatically.
 
-If you want to change the directory you have to change the line 
-./configure --datadir=/c
+If you want to change the directory you have to change the line \
+./configure --datadir=/c \
 
 Specify the drive as /c, /d, etc. The subsequent directories are appended directly. Note that libpostal is automatically appended. Accordingly, c/ becomes c:\libpostal and c/data becomes c:\data\libpostal.
 
