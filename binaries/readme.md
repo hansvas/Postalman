@@ -1,9 +1,10 @@
-I was not able to build a working dll for windows with the instructions found on https://github.com/openvenues/libpostal, the downloadable dll from pypostalwin has a fixed folder structur and expext the datafolder installed under C:\Workbench.
+Es war mir nicht möglich eine verwendbare DLL mit den Informationen die ich auf [libpostal] [https://github.com/openvenues/libpostal] gefunden habe zu bauen. Der Grund war, das diese Art libpostal für Windows zu bauen, neue Abhängigkeiten schafft die aber leider nicht aufgelöst werden können. 
 
-Anyway, after a bit searching and a night of trying, i did the following
+Die Alternative pypostalwin ist schon etwas älter und setzt eine Installation des Datenverzeichnisses unter c:\workbench\libpostal vorraus.
 
-i installed msys2
-i opened a command prompt msys2 mingw64 
+Nach einigem Suchen und einer Nacht des Ausprobierens fand ich folgende Lösung die nahe der Originalanleitung ist aber msys2 nur zum Bauen benötigt. :
+
+Ich installierte msys2, öffnete einen msys2 mingw Prompt: 
 
 pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc
 git clone https://github.com/openvenues/libpostal
@@ -14,15 +15,40 @@ cp -rf windows/* ./
 make -j4
 make install
 
-after that, you will find a libpostal-1.dll under 
-  /msys64/home/user/libpostal/src/.libs
+Danach findet sich libpostal-1.dll im Verzeichnis /msys64/home/user/libpostal/src/.libs
+Das Datenverzeichnis findet sich unter c:\libpostal, die notwendigen Daten wurden automatisch heruntergeladen.
 
-notes :
-this method needs the data where you entered the data path during build process.
-In this example it has to be c:\libpostal
+Wenn Sie das Verzeichnis ändern wollen müssen Sie die Zeile 
+./configure --datadir=/c
 
-#./configure --datadir=/c
-/c results in c: the build files automatically adds libpostal to it,
-so the resulting data path is c:\libpostal
+anpassen. Das Laufwerk geben Sie als /c, /d usw. an. Die anschließenden Verzeichnisse werden direkt angehängt. Beachten Sie das libpostal automatisch angehängt wird. Aus c/ wird dem entsprechend c:\libpostal aus c/data wird c:\data\libpostal.
 
+Das so entstandene Verzeichniss müssen Sie auch im Testprogamm (und eigenen Programmen) verwenden.
+---
 
+I was not able to build a usable DLL with the information I found on [libpostal] [https://github.com/openvenues/libpostal]. The reason was that this way of building libpostal for Windows creates new dependencies which unfortunately cannot be resolved. 
+
+The alternative pypostalwin is a bit older and requires an installation of the data directory under c:\workbench\libpostal.
+
+After some searching and a night of trial and error I found the following solution which is close to the original instructions but only requires msys2 to build. :
+
+I installed msys2, opened a msys2 mingw prompt: 
+
+pacman -S autoconf automake curl git make libtool gcc mingw-w64-x86_64-gcc
+git clone https://github.com/openvenues/libpostal
+cd libpostal
+cp -rf windows/* ./
+./bootstrap.sh
+./configure --datadir=/c
+make -j4
+make install
+
+After that you will find libpostal-1.dll in the directory /msys64/home/user/libpostal/src/.libs
+The data directory can be found at c:\libpostal, the necessary data was downloaded automatically.
+
+If you want to change the directory you have to change the line 
+./configure --datadir=/c
+
+Specify the drive as /c, /d, etc. The subsequent directories are appended directly. Note that libpostal is automatically appended. Accordingly, c/ becomes c:\libpostal and c/data becomes c:\data\libpostal.
+
+You must also use the resulting directory in the test program (and your own programs).
