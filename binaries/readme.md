@@ -21,9 +21,11 @@ Das Datenverzeichnis findet sich unter c:\libpostal, die notwendigen Daten wurde
 Wenn Sie das Verzeichnis ändern wollen müssen Sie die Zeile 
 ./configure --datadir=/c
 
-anpassen. Das Laufwerk geben Sie als /c, /d usw. an. Die anschließenden Verzeichnisse werden direkt angehängt. Beachten Sie das libpostal automatisch angehängt wird. Aus c/ wird dem entsprechend c:\libpostal aus c/data wird c:\data\libpostal.
+anpassen. Das Laufwerk geben Sie als /c,/d usw. an. Die daran anschließenden Verzeichniss werden direkt angehängt. Beachten Sie das "libpostal" automatisch angehängt wird. Aus c/ wird dem entsprechend c:\libpostal, 
+aus c/data wird c:\data\libpostal. Der Pfad unter dem die Daten gespeichert werden muss auch im Testprogramm bzw. bei Initialisierung der DLL verwendet werden, dementsprechend auch in allen eigenen Programmen verwendet werden.
 
-Das so entstandene Verzeichniss müssen Sie auch im Testprogamm (und eigenen Programmen) verwenden.
+Wer sich an den Build nicht herantraut oder einen anderen Pfad wünscht kann mich anschreiben, wenn ich Zeit habe kann ich ja mal ein Build durchlaufen lassen.
+
 ---
 
 I was not able to build a usable DLL with the information I found on [libpostal] [https://github.com/openvenues/libpostal]. The reason was that this way of building libpostal for Windows creates new dependencies which unfortunately cannot be resolved. 
